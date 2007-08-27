@@ -50,7 +50,7 @@ rm -rf %{buildroot}
 %files
 %defattr(-,root,root)
 %doc README COPYING Changelog PKG-INFO
-%{python_sitearch}/*.so
+%{python_sitearch}/*
 
 %files devel
 %defattr(-, root, root)
