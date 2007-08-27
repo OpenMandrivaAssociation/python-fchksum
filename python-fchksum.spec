@@ -1,14 +1,14 @@
 Summary:	Python C extension to (quickly) find the checksum of files
 Name:		python-fchksum
 Version: 1.7.1
-Release: %mkrel 4
-Source0:	%{name}-%{version}.tar.bz2
+Release: %mkrel 5
+Source0:	http://www.dakotacom.net/~donut/programs/fchksum/%{name}-%{version}.tar.bz2
 License:	GPL
 Group:		Development/Python
 URL:		http://www.dakotacom.net/~donut/programs/fchksum.html
 BuildRoot:	%{_tmppath}/%{name}-buildroot
-Requires:	python
-BuildRequires:	python-devel zlib-devel
+%py_requires -d
+BuildRequires:	zlib-devel
 
 %description
 This module provides quick and easy functions to find checksums of files.
@@ -50,7 +50,7 @@ rm -rf %{buildroot}
 %files
 %defattr(-,root,root)
 %doc README COPYING Changelog PKG-INFO
-%{_libdir}/python*/site-packages
+%{python_sitearch}/site-packages/*.so
 
 %files devel
 %defattr(-, root, root)
