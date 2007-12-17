@@ -6,7 +6,6 @@ Source0:	http://www.dakotacom.net/~donut/programs/fchksum/%{name}-%{version}.tar
 License:	GPL
 Group:		Development/Python
 URL:		http://www.dakotacom.net/~donut/programs/fchksum.html
-BuildRoot:	%{_tmppath}/%{name}-buildroot
 %py_requires -d
 BuildRequires:	zlib-devel
 
