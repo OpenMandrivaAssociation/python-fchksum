@@ -1,7 +1,7 @@
 Summary:	Python C extension to (quickly) find the checksum of files
 Name:		python-fchksum
 Version: 1.7.1
-Release: %mkrel 8
+Release: %mkrel 9
 Source0:	http://www.dakotacom.net/~donut/programs/fchksum/%{name}-%{version}.tar.bz2
 License:	GPL
 Group:		Development/Python
