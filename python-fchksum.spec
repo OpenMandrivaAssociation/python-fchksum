@@ -1,12 +1,11 @@
 Summary:	Python C extension to (quickly) find the checksum of files
 Name:		python-fchksum
 Version: 1.7.1
-Release: %mkrel 9
+Release: 10
 Source0:	http://www.dakotacom.net/~donut/programs/fchksum/%{name}-%{version}.tar.bz2
 License:	GPL
 Group:		Development/Python
 URL:		http://www.dakotacom.net/~donut/programs/fchksum.html
-BuildRoot:	%{_tmppath}/%{name}-buildroot
 %py_requires -d
 BuildRequires:	zlib-devel
 
@@ -39,13 +38,9 @@ Development files for Python fast checksum
 python setup.py build
 
 %install
-rm -rf %{buildroot}
 python setup.py install --root=%{buildroot}
-mkdir -p %{buildroot}/%{_includedir}/python%{pyver}
-install *.h %{buildroot}/%{_includedir}/python%{pyver}/
-
-%clean
-rm -rf %{buildroot}
+mkdir -p %{buildroot}/%{_includedir}/python%{py_ver}
+install *.h %{buildroot}/%{_includedir}/python%{py_ver}/
 
 %files
 %defattr(-,root,root)
@@ -55,5 +50,48 @@ rm -rf %{buildroot}
 %files devel
 %defattr(-, root, root)
 %doc test
-%{_includedir}/python%{pyver}/*.h
+%{_includedir}/python%{py_ver}/*.h
+
+
+
+%changelog
+* Wed Nov 03 2010 Michael Scherer <misc@mandriva.org> 1.7.1-9mdv2011.0
++ Revision: 592734
+- rebuild for python 2.7
+
+* Tue Sep 15 2009 Thierry Vignaud <tv@mandriva.org> 1.7.1-8mdv2010.0
++ Revision: 442109
+- rebuild
+
+* Wed Jul 23 2008 Thierry Vignaud <tv@mandriva.org> 1.7.1-7mdv2009.0
++ Revision: 242396
+- rebuild
+- kill re-definition of %%buildroot on Pixel's request
+
+  + Olivier Blin <oblin@mandriva.com>
+    - restore BuildRoot
+
+* Mon Aug 27 2007 Funda Wang <fwang@mandriva.org> 1.7.1-5mdv2008.0
++ Revision: 71752
+- add egg-info
+- Rebuild for python 2.5
+
+
+* Tue Aug 15 2006 Olivier Thauvin <nanardon@mandriva.org>
++ 08/15/06 17:35:13 (56229)
+- rebuild
+- quiet setup
+
+* Tue Aug 15 2006 Olivier Thauvin <nanardon@mandriva.org>
++ 08/15/06 17:33:37 (56228)
+Import python-fchksum
+
+* Sun Dec 05 2004 Michael Scherer <misc@mandrake.org> 1.7.1-3mdk
+- Rebuild for new python
+
+* Tue Nov 02 2004 Christiaan Welvaart <cjw@daneel.dyndns.org> 1.7.1-2mdk
+- add BuildRequires: zlib-devel
+
+* Fri Dec 12 2003 Arnaud de Lorbeau <adelorbeau@mandrakesoft.com> 1.7.1-1mdk
+- First MandrakeLinux package
 
