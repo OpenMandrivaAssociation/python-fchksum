@@ -5,7 +5,7 @@ Release: 11
 Source0:	http://www.dakotacom.net/~donut/programs/fchksum/%{name}-%{version}.tar.bz2
 License:	GPL
 Group:		Development/Python
-URL:		http://www.dakotacom.net/~donut/programs/fchksum.html
+URL:		https://www.dakotacom.net/~donut/programs/fchksum.html
 BuildRequires:  python-devel
 BuildRequires:	zlib-devel
 
